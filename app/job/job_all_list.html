@@ -1,0 +1,117 @@
+
+<section id="jobs">
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-xs-12 col-md-3">
+				<h3 class="sub-heading">Advance search</h3>
+				<form>
+					<div class="form-group">
+						<label>Job category</label> <select class="form-control input-lg">
+							<option>Networking</option>
+							<option>Sales &amp; Marketing</option>
+							<option>Teaching</option>
+							<option>Programming</option>
+						</select> <small class="help-block">Help text for job seeker.</small>
+					</div>
+					<div class="form-group">
+						<label>Location</label> <select class="form-control input-lg">
+							<option>America</option>
+							<option>Europe</option>
+							<option>Africa</option>
+							<option>Asia</option>
+							<option>Oceanic</option>
+						</select> <small class="help-block"></small>
+					</div>
+					<div class="form-group">
+						<label>Salary</label> <select class="form-control input-lg">
+							<option>€1000 - €5000</option>
+							<option>€5000 - €10000</option>
+							<option>€10000+</option>
+						</select> <small class="help-block"></small>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<div class="checkbox">
+								<label> <input type="checkbox"> Freelance
+								</label>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="checkbox">
+								<label> <input type="checkbox"> Contract
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<div class="checkbox">
+								<label> <input type="checkbox"> Full time
+								</label>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="checkbox">
+								<label> <input type="checkbox"> Part time
+								</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary input-lg btn-block">Search</button>
+				</form>
+			</div>-->
+			<div class="col-lg-10 col-lg-offset-1">
+				<!-- <h3 class="sub-heading">
+					All jobs <span class="pull-right"><small>1 - 50
+							results</small></span>
+				</h3> -->
+				<table class="table table-striped">
+					<tbody>
+						<tr data-ng-repeat="job in jobs">
+							<td>
+								<p>
+									<a href="app.html#/job-details/{{job.id}}">{{job.name}}</a> <small
+										class="label label-info"
+										data-ng-show="job.type === 'ONE_HOUR'">1 hour job</small><small
+										class="label label-success"
+										data-ng-show="job.type === 'FOUR_HOURS'">4 hour job</small><small
+										class="label label-danger"
+										data-ng-show="job.type === 'EIGHT_HOURS'">8 hour job</small>
+								</p>
+								<p>
+									{{job.description| limitTo:100}} <span
+										data-ng-if='job.description.length > 100'>...</span>
+								</p>
+								<p>
+									Job expires in: <i class="glyphicon glyphicon-calendar"></i><span
+										data-ng-class="{'timer-expiring': job.isShortlyBefore}"> <timer
+											countdown="job.remainingTime" max-time-unit="'hour'"
+											interval="1000">{{hours}} h {{minutes}} m {{seconds}}
+										s</timer></span>
+								</p>
+
+								<p>
+									<a href="app.html#/job-details/{{job.id}}" class="btn btn-lg"
+										data-ng-class="{'btn-danger': job.type === 'EIGHT_HOURS', 'btn-info':  job.type === 'ONE_HOUR', 'btn-success':  job.type === 'FOUR_HOURS'}">Earn
+										${{job.payoutAmount| number:2}} now!</a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- <div class="pull-right">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><span>1</span></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</section>

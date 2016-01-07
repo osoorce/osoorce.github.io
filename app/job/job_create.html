@@ -1,0 +1,162 @@
+<section id="post">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-3">
+				<h3 class="sub-heading">
+					<span class="yellowish">&dollar;30</span> for a 1 hour job!
+				</h3>
+				<p>
+					<strong>How it works</strong>
+				</p>
+				<ol>
+					<li>You submit your 1 hour job.</li>
+					<li>We search 4 hours for a suitable contractor.</li>
+					<li>The contractor has 2 hours to deliver the results</li>
+					<li>You have to pay nothing, if you don't get a result within
+						6 hours from the time you submit the job.</li>
+				</ol>
+
+				<!-- <p>
+					<strong>Benefits</strong>
+				</p>
+				<ul>
+					<li>Quick results for urgents jobs.</li>
+					<li>Riskfree.</li>
+					<li>Consectetur adipiscing.</li>
+					<li>Consectetur adipiscing elit.</li>
+					<li>Adipiscing elit.</li>
+					<li>Consectetur adipiscing elit.</li>
+				</ul>-->
+			</div>
+			<div class="col-xs-12 col-md-9">
+				<h3 class="sub-heading">Post a job</h3>
+				<div class="content-inner-detail">
+					<form name="jobCreate" novalidate>
+						<legend>Job description</legend>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group has-feedback"
+									data-ng-class="{'has-error': jobCreate.name.$invalid, 'has-success':  !jobCreate.name.$invalid}">
+									<label for="">Job title</label> <input data-ng-model="job.name"
+										type="text" name="name" data-ng-required="true"
+										data-ng-minlength="20" data-ng-maxlength="50"
+										class="form-control input-lg"><span
+										class="glyphicon glyphicon-ok form-control-feedback"
+										data-ng-if="!jobCreate.name.$invalid"></span><span
+										class="glyphicon glyphicon-remove form-control-feedback"
+										data-ng-if="jobCreate.name.$invalid"></span><small
+										class="help-block" data-ng-show="!jobCreate.name.$invalid">&nbsp;</small><small
+										class="help-block" data-ng-if="jobCreate.name.$invalid">Provide
+										a compelling name for the job.</small><small class="help-block"
+										data-ng-show="!jobCreate.name.$invalid">&nbsp;</small><small
+										data-ng-show="jobCreate.name.$error.required"
+										class="help-block">Name is mandatory</small><small
+										data-ng-show="jobCreate.name.$error.minlength"
+										class="help-block">The name has to be at least 20
+										characters long</small><small
+										data-ng-show="jobCreate.name.$error.maxlength"
+										class="help-block">Maximum 100 characters exceeded</small>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group has-feedback"
+									data-ng-class="{'has-error': jobCreate.description.$invalid, 'has-success':  !jobCreate.description.$invalid}">
+									<label>Description</label>
+									<textarea rows="5" class="form-control" name="description"
+										data-ng-model="job.description" data-ng-required="true"
+										data-ng-minlength="150" data-ng-maxlength="1000"></textarea>
+									<span class="glyphicon glyphicon-ok form-control-feedback"
+										data-ng-if="!jobCreate.description.$invalid"></span><span
+										class="glyphicon glyphicon-remove form-control-feedback"
+										data-ng-if="jobCreate.description.$invalid"></span><small
+										class="help-block"
+										data-ng-show="!jobCreate.description.$invalid">&nbsp;</small><small
+										class="help-block" data-ng-if="jobCreate.description.$invalid">Describe
+										the jobs as detailed as possible.</small><small class="help-block"
+										data-ng-show="!jobCreate.description.$invalid">&nbsp;</small><small
+										data-ng-show="jobCreate.description.$error.required"
+										class="help-block">Description is mandatory</small><small
+										data-ng-show="jobCreate.description.$error.minlength"
+										class="help-block">The name has to be at least 150
+										characters long</small><small
+										data-ng-show="jobCreate.description.$error.maxlength"
+										class="help-block">Maximum 1000 characters exceeded</small>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group has-feedback"
+									data-ng-class="{'has-error': jobCreate.requirements.$invalid, 'has-success':  !jobCreate.requirements.$invalid}">
+									<label>Requirements</label> <span></span>
+									<textarea rows="5" class="form-control" name="requirements"
+										data-ng-model="job.requirements" data-ng-required="true"
+										data-ng-minlength="50" data-ng-maxlength="500"></textarea>
+									<span class="glyphicon glyphicon-ok form-control-feedback"
+										data-ng-if="!jobCreate.requirements.$invalid"></span><span
+										class="glyphicon glyphicon-remove form-control-feedback"
+										data-ng-if="jobCreate.requirements.$invalid"></span><small
+										class="help-block"
+										data-ng-show="!jobCreate.requirements.$invalid">&nbsp;</small><small
+										class="help-block"
+										data-ng-if="jobCreate.requirements.$invalid">Provide
+										constraints for the job.</small><small class="help-block"
+										data-ng-show="!jobCreate.requirements.$invalid">&nbsp;</small><small
+										data-ng-show="jobCreate.requirements.$error.required"
+										class="help-block">Requirements are mandatory</small><small
+										data-ng-show="jobCreate.requirements.$error.minlength"
+										class="help-block">The requirements has to be at least
+										50 characters long</small><small
+										data-ng-show="jobCreate.requirements.$error.maxlength"
+										class="help-block">Maximum 500 characters exceeded</small>
+
+								</div>
+							</div>
+						</div>
+						<br>
+						<legend>Your profile</legend>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group has-feedback"
+									data-ng-class="{'has-error': jobCreate.email.$invalid, 'has-success':  !jobCreate.email.$invalid}">
+									<label for="">Email address</label> <input type="email"
+										data-ng-model="job.provider.email" name="email"
+										class="form-control input-lg" data-ng-required="true"><span
+										class="glyphicon glyphicon-ok form-control-feedback"
+										data-ng-if="!jobCreate.email.$invalid"></span><span
+										class="glyphicon glyphicon-remove form-control-feedback"
+										data-ng-if="jobCreate.email.$invalid"></span><small
+										class="help-block" data-ng-show="!jobCreate.email.$invalid">&nbsp;</small><small
+										class="help-block" data-ng-if="jobCreate.email.$invalid">Provide
+										a valid email, so we can contact you.</small><small class="help-block"
+										data-ng-show="!jobCreate.email.$invalid">&nbsp;</small><small
+										data-ng-show="jobCreate.email.$error.required"
+										class="help-block">Email-Adress is mandatory</small><small
+										data-ng-show="jobCreate.email.$error.email" class="help-block">This
+										is not a valid email address</small>
+								</div>
+							</div>
+						</div>
+						<br>
+						<button type="submit"
+							data-ng-disabled="jobCreate.$invalid ||  submitted"
+							data-ng-click="save(job)" class="btn btn-primary input-lg">Post
+							job</button>
+						<p>
+						<div class="alert alert-success" data-ng-show="submitted">
+							Congratulations! The job was successfully published. We will look
+							the next
+							<timer countdown="500" max-time-unit="'hour'" autostart="false"
+								interval="1000">{{hours}} h {{minutes}} m {{seconds}} s</timer>
+							for a suitable contractor for the job!<br>
+
+						</div>
+						<p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
